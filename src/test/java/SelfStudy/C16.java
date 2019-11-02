@@ -3,13 +3,17 @@ package SelfStudy;
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class C16 {
-    public static void main(String[] args) {
-        WebDriver driver=new WebDriverFactory().getDriver("chrome");
-        driver.get("https://www.amazon.com/");
-        WebElement searchButton = driver.findElement(By.xpath(""));
+    public static void main(String[] args) throws InterruptedException {
+        WebDriver driver= WebDriverFactory.getDriver("chrome");
+        driver.get("https://login.salesforce.com");
+        driver.findElement(By.name("username")).sendKeys("yusuf");
+        driver.findElement(By.id("password")).sendKeys("123345");
+        driver.findElement(By.cssSelector("#Login")).click();
+        System.out.println(driver.findElement(By.xpath("//div[@id='error']")).getText());
 
+        Thread.sleep(2000);
+        driver.close();
     }
 }
