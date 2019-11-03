@@ -47,6 +47,6 @@ public class C19AddToCart {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[text()='Proceed']")).click();
         Thread.sleep(2000);
-        driver.quit();
+        //driver.quit();
     }
 }
