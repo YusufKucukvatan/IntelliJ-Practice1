@@ -39,7 +39,7 @@ public class RaidoButtonsTest {
             blue.click();
             //red.click();
             Assert.assertTrue(!blue.isSelected(), "blue is not selected");
-            Assert.assertFalse(red.isSelected(), "red is selected");
+            Assert.assertFalse(red.isSelected(), "red is selected.");
         }
 
         @AfterMethod
