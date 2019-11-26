@@ -11,15 +11,19 @@ public class C21ActionsClassAndMouseActions {
         WebDriver driver= WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.get("https://www.amazon.com/");
-        Actions a=new Actions(driver);
+        Actions act=new Actions(driver);
         WebElement element1= driver.findElement(By.id("nav-link-accountList"));
-        a.moveToElement(element1).build().perform();
+        act.moveToElement(element1).build().perform(); //==> Hover over element
+        act.moveToElement(element1).click().build().perform();
+        act.moveToElement(element1).doubleClick().build().perform();
+        act.moveToElement(element1).contextClick().build().perform();
+        act.moveToElement(element1).clickAndHold().build().perform();
+        act.moveToElement(element1).release().build().perform();
+
         // build: only makes the action ready to perform.
-        // perform: makes the real action to bring cursor over the element
+        // perform: executes the action
 
-        Thread.sleep(3000);
-
-
+        Thread.sleep(4000);
         driver.close();
 
     }

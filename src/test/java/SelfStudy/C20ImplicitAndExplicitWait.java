@@ -18,23 +18,26 @@ public class C20ImplicitAndExplicitWait {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver= WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
-        driver.get("");
+        driver.get("https://amazon.com");
 
         Thread.sleep(3000); //==> Thread Sleep
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); //==> Implicit Wit
+
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); //==> Implicit Wait
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+
+        WebDriverWait wait=new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("xxxxxxx"))); //==>Explicit wait
 
 
-        WebDriverWait w=new WebDriverWait(driver, 5);
-        w.until(ExpectedConditions.elementToBeClickable(By.xpath("xxxxxxx"))); //==>Explicit wait
-
-
-        Wait<WebDriver> wait=new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
+        Wait<WebDriver> waitFluent=new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class); //==>Fluent Wait
-        WebElement element=wait.until(new Function<WebDriver, WebElement>() {
+
+        WebElement element=waitFluent.until(new Function<WebDriver, WebElement>() {
+
             @Override
-            public WebElement apply(WebDriver webDriver) {
-                return driver.findElement(By.id("xxxxxx"));
-            }
-        });
+        public WebElement apply(WebDriver webDriver) {
+            return driver.findElement(By.id("xxxxxx"));
+        }
+    });
     }
 }

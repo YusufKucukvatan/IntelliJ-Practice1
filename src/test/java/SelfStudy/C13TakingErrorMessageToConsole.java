@@ -14,5 +14,6 @@ public class C13TakingErrorMessageToConsole {
         driver.findElement(By.xpath("//*[@id=\'Login\']")).click();
         System.out.println(driver.findElement(By.cssSelector("div#error.loginError")).getText());
 
+        driver.close();
     }
 }

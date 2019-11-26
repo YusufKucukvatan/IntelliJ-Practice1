@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class TestCase4 {
     public static void main(String[] args) throws InterruptedException {
@@ -25,7 +26,9 @@ public class TestCase4 {
             System.out.println("actual = " + actual1);
             System.out.println("expected = " + expected1);
         }
+        Assert.assertFalse(driver.findElement(By.cssSelector("small[data-bv-for=\"lastname\"][data-bv-validator=\"regexp\"]")).isDisplayed());
         driver.findElement(By.cssSelector("input[name=\"lastname\"]")).sendKeys("123");
+        Assert.assertTrue(driver.findElement(By.cssSelector("small[data-bv-for=\"lastname\"][data-bv-validator=\"regexp\"]")).isDisplayed());
         String expected2="The last name can only consist of alphabetical letters and dash";
         String actual2= driver.findElement(By.cssSelector("small[data-bv-for=\"lastname\"][data-bv-validator=\"regexp\"]")).getText();
         if (actual2.equals(expected2)){

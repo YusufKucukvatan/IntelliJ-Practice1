@@ -21,23 +21,21 @@ public class C22KeyboardActions {
         WebElement element2= driver.findElement(By.id("nav-link-accountList"));
         a.moveToElement(element2).contextClick().build().perform(); // contextClick()==> Right Click
         a.moveToElement(element2).doubleClick().build().perform();
-        a.moveToElement(element2).click().sendKeys(Keys.COMMAND).build().perform(); //keyDown==>Holds any key pressed
-        a.moveToElement(element2).click().sendKeys(Keys.ENTER).build().perform(); //keyDown==>Holds any key pressed
-        a.moveToElement(element2).click().sendKeys(Keys.ARROW_DOWN).build().perform(); //keyDown==>Holds any key pressed
-        a.moveToElement(element2).click().sendKeys(Keys.F6).build().perform(); //keyDown==>Holds any key pressed
-        a.moveToElement(element2).click().keyDown(Keys.COMMAND).build().perform(); //keyDown==>Holds any key pressed
-        a.moveToElement(element2).click().keyDown(Keys.ENTER).build().perform();   //keyDown==>Holds any key pressed
+        a.moveToElement(element2).click().sendKeys(Keys.COMMAND).build().perform();
+        a.moveToElement(element2).click().sendKeys(Keys.ENTER).build().perform();
+        a.moveToElement(element2).click().sendKeys(Keys.ARROW_DOWN).build().perform();
+        a.moveToElement(element2).click().sendKeys(Keys.F6).build().perform();
+        a.moveToElement(element2).click().keyDown(Keys.COMMAND).build().perform();
+        a.moveToElement(element2).click().keyDown(Keys.ENTER).build().perform();
         a.moveToElement(element2).click().keyDown(Keys.RETURN).build().perform();
-        a.moveToElement(element2).click().keyDown(Keys.TAB).build().perform();
+        a.moveToElement(element2).click().keyDown(Keys.SHIFT).build().perform();
         a.moveToElement(element2).clickAndHold().build().perform();
-        a.moveToElement(element2).dragAndDrop(element1,element2).build().perform(); // element1:source element2:target
-        a.moveToElement(element2).release().build().perform(); // release
+        a.moveToElement(element2).dragAndDrop(element1,element2).build().perform(); // element1=source, element2=target
+        a.moveToElement(element2).release().build().perform(); // release mouse click
         // Actions is almost the same as human manual use of mouse and keyboard...
 
 
         Thread.sleep(3000);
-
-
         driver.close();
 
     }
