@@ -16,14 +16,13 @@ public class C24FramesDragAndDrop {
         //WebElement target=driver.findElement(By.cssSelector("div#draggable"));
         // target.click(); ==> Selenium could't find the element because it is in a frame
         driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.demo-frame"))); //==> We gave the location of the frame by CSS.
-        // Now; We told selenium that you are gonna handle a frame and it will be able to find any element in this frame...
+        // Now; We told selenium that you are gonna handle a frame and driver is now able to find any element in this frame...
         Thread.sleep(2000);
         WebElement source=driver.findElement(By.cssSelector("div#draggable"));
         WebElement target= driver.findElement(By.cssSelector("div#droppable"));
         Actions a=new Actions(driver);
         a.dragAndDrop(source, target).build().perform();
-        driver.switchTo().defaultContent();
-
+        //driver.switchTo().defaultContent();  //==> Now, driver will switch to regular browser window from a specific frame
         Thread.sleep(4000);
         driver.close();
     }

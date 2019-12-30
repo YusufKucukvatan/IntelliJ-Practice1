@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 public class C27OpenWindowsInDifferentTabs {
@@ -20,7 +21,7 @@ public class C27OpenWindowsInDifferentTabs {
         WebElement footerDriver= driver.findElement(By.id("gf-BIG"));
         System.out.println(footerDriver.findElements(By.tagName("a")).size());
         WebElement footerFirstColumnDriver= driver.findElement(By.xpath("//div[@id='gf-BIG']/table/tbody/tr/td[1]/ul"));
-        ArrayList<WebElement> links=new ArrayList<>(footerFirstColumnDriver.findElements(By.tagName("a")));
+        List<WebElement> links=new ArrayList<>(footerFirstColumnDriver.findElements(By.tagName("a")));
         System.out.println(links.size());
         System.out.println(links);
         Actions action = new Actions(driver);

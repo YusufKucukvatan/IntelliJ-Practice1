@@ -21,7 +21,7 @@ public class C17DropDowns {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@id='ctl00_mainContent_ddl_originStation1_CTXT']")).click();
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("a[text='Bengaluru (BLR)']")).click();
+        driver.findElement(By.cssSelector("a[text()='Bengaluru (BLR)']")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
         Thread.sleep(1000);

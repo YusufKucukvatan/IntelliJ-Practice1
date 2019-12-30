@@ -57,14 +57,14 @@ public class C18DropDownsRadioButtons {
         WebElement element8= driver.findElement(By.cssSelector("#alertbtn"));
         element8.click();
         Thread.sleep(1000);
-        System.out.println(driver.switchTo().alert().getText());
+        System.out.println(driver.switchTo().alert().getText());  // Switch to Alert
         driver.switchTo().alert().accept();
 
         Thread.sleep(1000);
         WebElement element9= driver.findElement(By.id("confirmbtn"));
         element9.click();
         Thread.sleep(1000);
-        System.out.println(driver.switchTo().alert().getText());
+        System.out.println(driver.switchTo().alert().getText());  //Printing Alert Message
         driver.switchTo().alert().dismiss();
 
         WebElement element10=driver.findElement(By.id("displayed-text"));

@@ -30,7 +30,8 @@ public class C22KeyboardActions {
         a.moveToElement(element2).click().keyDown(Keys.RETURN).build().perform();
         a.moveToElement(element2).click().keyDown(Keys.SHIFT).build().perform();
         a.moveToElement(element2).clickAndHold().build().perform();
-        a.moveToElement(element2).dragAndDrop(element1,element2).build().perform(); // element1=source, element2=target
+
+        a.dragAndDrop(element1,element2).build().perform(); // element1=source, element2=target
         a.moveToElement(element2).release().build().perform(); // release mouse click
         // Actions is almost the same as human manual use of mouse and keyboard...
 

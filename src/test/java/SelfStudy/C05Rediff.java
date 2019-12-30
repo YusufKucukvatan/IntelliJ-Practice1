@@ -1,12 +1,14 @@
 package SelfStudy;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class C05Rediff {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "/Users/yusufkucukvatan/Selenium/Drivers/chromedriver");
+        WebDriverManager.chromedriver().setup();
+        //System.setProperty("webdriver.chrome.driver", "/Users/yusufkucukvatan/Selenium/Drivers/chromedriver");
         WebDriver driver=new ChromeDriver();
         driver.get("http://rediff.com");
         driver.findElement(By.cssSelector("a[title='Already a user? Sign in']")).click();

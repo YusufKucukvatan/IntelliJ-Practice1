@@ -22,7 +22,6 @@ public class C25DeltaAirLines {
         for (int i = 0; i < 4; i++) {
             driver.findElement(By.cssSelector("input[aria-describedby=\"resultStatus\"]")).sendKeys(Keys.ARROW_DOWN);
             Thread.sleep(1500);
-
         }
         driver.findElement(By.cssSelector("input[aria-describedby=\"resultStatus\"]")).sendKeys(Keys.ENTER);
         driver.findElement(By.cssSelector("#toAirportName")).click();

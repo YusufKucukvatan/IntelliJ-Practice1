@@ -17,7 +17,6 @@ public class C38ScreenShot {
 
         File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(src, new File("/Users/yusufkucukvatan/Desktop/Screen Shots://GoogleScreenshot.png"));
-
         driver.close();
     }
 }

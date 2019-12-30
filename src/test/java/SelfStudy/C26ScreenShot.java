@@ -16,10 +16,8 @@ public class C26ScreenShot {
         WebDriver driver=new ChromeDriver();
         driver.get("https://google.com");
         TakesScreenshot scrShot=(TakesScreenshot)driver;
-        File scrFile=scrShot.getScreenshotAs(OutputType.FILE );
-        FileUtils.copyFile(scrFile, new File("/Users/yusufkucukvatan/Desktop/SS"));
+        File scrFile=scrShot.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File("/Users/yusufkucukvatan/IdeaProjects/Summer2019VATestNGSeleniumProject/src/test/java/SelfStudy/ScreenShots/Rahul.png"));
         driver.close();
     }
-
-
 }

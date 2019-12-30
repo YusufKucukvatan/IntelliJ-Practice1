@@ -16,15 +16,13 @@ import java.util.concurrent.TimeUnit;
 public class C19AddToCart {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver= WebDriverFactory.getDriver("chrome");
-        WebDriverWait wait=new WebDriverWait(driver, 5);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+        WebDriverWait wait=new WebDriverWait(driver, 5);
         driver.manage().window().maximize();
+        driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
         ArrayList<String> itemsNeeded=new ArrayList<>(Arrays.asList("Brocolli", "Cucumber", "Carrot", "Tomato"));
 
-        List<WebElement> products=driver.findElements(By.cssSelector("h4.product-name"));
-        //ArrayList<WebElement> p=new ArrayList<>(driver.findElements(By.cssSelector("h4.product-name"))); ==> both work, list or arrayList
-        //System.out.println(p.size());
+        List<WebElement> products=driver.findElements(By.cssSelector("h4.product-name")); //.findElements ==> returns List<WebElement>
         System.out.println(products.size());
 
         int count=0;
@@ -32,7 +30,8 @@ public class C19AddToCart {
             String item=products.get(i).getText().substring(0,products.get(i).getText().indexOf(" "));
             if(itemsNeeded.contains(item)){
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='ADD TO CART']")));
-                driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
+                List<WebElement> addToCartButton=driver.findElements(By.xpath("//button[text()='ADD TO CART']"));
+                addToCartButton.get(i).click();
                 Thread.sleep(4000);
                 count++;
                 if(count==4){

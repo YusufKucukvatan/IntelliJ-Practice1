@@ -19,7 +19,7 @@ public class C35JavacsriptFindingHiddenElements {
         String text=(String) js.executeScript(script);
 
         System.out.println(text);
-        // In this test script there is ahidden element in from window.
+        // In this test script there is a hidden element in window.
         // Java cannot extract hidden elements.
         // We have to use JavaScript HTML DOM(Document Object Model) to extract hidden elements.
         //https://www.w3schools.com/js/js_htmldom_document.asp ==> You may find all the methods here about DOM

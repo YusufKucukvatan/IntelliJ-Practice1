@@ -28,7 +28,6 @@ public class C20ImplicitAndExplicitWait {
         WebDriverWait wait=new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("xxxxxxx"))); //==>Explicit wait
 
-
         Wait<WebDriver> waitFluent=new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class); //==>Fluent Wait
 
@@ -39,5 +38,7 @@ public class C20ImplicitAndExplicitWait {
             return driver.findElement(By.id("xxxxxx"));
         }
     });
+        WebDriverWait wait1=new WebDriverWait(driver,10);
+        wait1.until(ExpectedConditions.visibilityOf(element));
     }
 }
