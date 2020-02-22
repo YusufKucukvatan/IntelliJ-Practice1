@@ -2,6 +2,7 @@ package com.cybertek.tests.d07_typeOfElements;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -40,6 +41,9 @@ public class RaidoButtonsTest {
             //red.click();
             Assert.assertTrue(!blue.isSelected(), "blue is not selected");
             Assert.assertFalse(red.isSelected(), "red is selected.");
+            JavascriptExecutor js=(JavascriptExecutor)driver;
+            js.executeScript("document.getElementsByClassName(ElementLocator).click();");
+
         }
 
         @AfterMethod

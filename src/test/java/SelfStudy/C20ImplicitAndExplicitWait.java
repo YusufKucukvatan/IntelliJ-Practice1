@@ -27,6 +27,9 @@ public class C20ImplicitAndExplicitWait {
 
         WebDriverWait wait=new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("xxxxxxx"))); //==>Explicit wait
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("xxxxxxx")))); //==>Explicit wait
+        wait.until(ExpectedConditions.titleIs("xxxxxxx")); //==>Explicit wait
+        wait.until(ExpectedConditions.urlContains("xxxxxxx")); //==>Explicit wait
 
         Wait<WebDriver> waitFluent=new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class); //==>Fluent Wait

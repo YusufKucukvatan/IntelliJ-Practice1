@@ -7,6 +7,7 @@ public class FirstClass {
         Faker faker = new Faker();
         System.out.println(faker.name().fullName());
         System.out.println(faker.chuckNorris().fact());
+
     }
 }
 

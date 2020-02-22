@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -31,6 +32,7 @@ public class C27OpenWindowsInDifferentTabs {
             //links.get(i).sendKeys(clickOnLinkTab);
             Thread.sleep(1000);
         }
+
         Set<String> windows= driver.getWindowHandles();
         Iterator<String> iter=windows.iterator();
         while (iter.hasNext()){
@@ -41,9 +43,16 @@ public class C27OpenWindowsInDifferentTabs {
             driver.close();
         }
 
+        //Set<String> windows= driver.getWindowHandles();
+//        for (String each : windows) {
+//            driver.switchTo().window(each);
+//            if (driver.getTitle().equalsIgnoreCase("AmazonPrime")){
+//                break;
+//            }
+//        }
+
         Thread.sleep(2000);
         driver.quit();
-
 
     }
 }

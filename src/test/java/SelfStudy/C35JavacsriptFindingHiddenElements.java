@@ -17,7 +17,6 @@ public class C35JavacsriptFindingHiddenElements {
         JavascriptExecutor js=(JavascriptExecutor)driver;
         String script="return document.getElementById(\"fromPlaceName\").value;";
         String text=(String) js.executeScript(script);
-
         System.out.println(text);
         // In this test script there is a hidden element in window.
         // Java cannot extract hidden elements.
